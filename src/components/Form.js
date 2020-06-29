@@ -36,5 +36,7 @@ class Form extends Component {
 
 export default Form;
 
+// This line tells the React Component to put itself into the HTML document.
 const wrapper = document.getElementById("container");
 wrapper ? ReactDOM.render(<Form />, wrapper) : false;
+

@@ -1,0 +1,28 @@
+.title {
+  font-family: "Pacifico";
+}
+
+/*For now, just to separate the title from the content*/
+header {
+  margin-bottom: 120px;                                                                                                                     
+  text-align: center;                                                                                                         
+  margin: 4em;                                                                                                                
+}
+
+.subtitle {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Montserrat";
+}
+
+footer {                                                                                                                      
+  text-align: center;                                                                                                         
+  margin-top: 2em;                                                                                                            
+}                                                                                                                             
+
+/* Login - note this is a class. */
+.login {                       
+  display: none;               
+}                              

@@ -21,7 +21,7 @@ module.exports = () => {
   }, {});
 
   return {
-    // fs: empty from issue: https://github.com/motdotla/dotenv/issues/233
+    // Below line fixes this known issue: https://github.com/motdotla/dotenv/issues/233
     node: {
       fs: "empty"
     },
@@ -40,7 +40,10 @@ module.exports = () => {
           exclude: /node_modules/,
           use: {
             loader: "babel-loader"
-          }
+          },
+          resolve: {
+            extensions: ['.js', '.jsx'],
+          },
         },
         {
           test: /\.html$/,
@@ -51,6 +54,21 @@ module.exports = () => {
         {
           test: /\.css$/,
           use: ["style-loader", "css-loader"]
+        },
+        // This line requires installing file-loader
+        // which allows us to import file-based assets
+        // into webpack, managed by JS and CSS files.
+        {
+          test: /\.(woff(2)?|ttf|eot|svg|gif|png)(\?v=\d+\.\d+\.\d+)?$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'fonts/'
+              }
+            }
+          ]
         }
       ]
     }

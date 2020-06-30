@@ -16,8 +16,9 @@ export default withRouter(class AppWithRouterAccess extends Component {
   }
 
   render() {
+    console.log(process.env.OKTA_ORG_URL);
     return (
-        <Security issuer={`https://${process.env.OKTA_ORG_URL}/oauth2/default`}
+        <Security issuer={`${process.env.OKTA_ORG_URL}/oauth2/default`}
                   clientId={process.env.OKTA_CLIENT_ID}
                   redirectUri={window.location.origin + '/implicit/callback'}
                   onAuthRequired={this.onAuthRequired}

@@ -1,1 +1,1 @@
-## Notes - Refresher on React
+## Notes - Some notes to myself:
